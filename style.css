@@ -40,14 +40,13 @@ font-style: normal;
                 align-items: center;
                 color: #fff;
                 text-shadow: 0 2px 8px #000;
-                pointer-events: none; /* So only navbar is clickable */
+                
             }
 
 /*about grid text*/
 .grid-container {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-  gap: 1rem;
   padding: 2rem;
   height: 100vh;
 }
