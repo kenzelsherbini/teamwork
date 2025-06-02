@@ -84,3 +84,48 @@ font-style: normal;
   grid-row: 3;
 }
 
+/* Make images look nice */
+.card-img-top {
+  object-fit: cover;
+  height: 180px;
+  border-radius: 0.4rem 0.4rem 0 0;
+}
+
+/* Card title style */
+.card-title {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Badge for position */
+.badge-position {
+  background-color: #4d5256;
+  color: white;
+  font-size: 0.75rem;
+  padding: 4px 8px;
+  border-radius: 12px;
+  margin-bottom: 5px;
+  display: inline-block;
+}
+
+/* Year text style */
+.card-body p {
+  font-size: 0.85rem;
+  color: #4d5256;
+}
+
+/* Button style */
+.btn-primary {
+  background-color: #4d5256;
+  border: none;
+}
+
+.btn-primary:hover {
+  background-color: #000000;
+}
+
+/* Space between cards */
+#rosterGrid .col-6 {
+  margin-bottom: 20px;
+}

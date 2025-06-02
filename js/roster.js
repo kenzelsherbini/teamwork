@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
   const grid = document.getElementById('rosterGrid');
 
-  // Add modal container if not already there
+  // Create a separate container for all modals (added once)
   let modalContainer = document.getElementById('modalContainer');
   if (!modalContainer) {
     modalContainer = document.createElement('div');
@@ -13,36 +13,39 @@ document.addEventListener('DOMContentLoaded', () => {
     grid.innerHTML = '';
     modalContainer.innerHTML = '';
 
-    list.forEach((car, i) => {
+    list.forEach((p, i) => {
+      const fullName = `${p.firstName} ${p.lastName}`;
       const col = document.createElement('div');
       col.className = 'col-6 col-lg-2';
 
+      // Card without modal inside
       col.innerHTML = `
-        <div class="card h-100 shadow-sm text-center">
-          <img src="${car.photo}" alt="${car.firstName} ${car.lastName}" class="card-img-top" />
-          <div class="card-body">
-            <h5 class="card-title mb-1">${car.firstName} ${car.lastName}</h5>
-            <div class="badge bg-secondary mb-1">${car.position}</div>
-            <p class="small text-muted mb-0">Year: ${car.age}</p>
-            <button type="button" class="btn btn-primary mt-2" data-bs-toggle="modal" data-bs-target="#modal-${i}">
-              More Info
+        <div class="card h-100 shadow-sm">
+          <img src="${p.photo}" alt="${fullName}" class="card-img-top" />
+          <div class="card-body text-center">
+            <h5 class="card-title mb-1">${fullName}</h5>
+            <div class="badge badge-position badge-pos-${p.position}">${p.position}</div>
+            <p class="small text-muted mb-0">Year:<br>${p.age}</p>
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal-${i}">
+              Click to see their task!
             </button>
           </div>
         </div>
       `;
+
       grid.appendChild(col);
 
-   
+      // Modal goes into separate container
       modalContainer.innerHTML += `
         <div class="modal fade" id="modal-${i}" tabindex="-1" aria-labelledby="modalLabel-${i}" aria-hidden="true">
           <div class="modal-dialog">
             <div class="modal-content">
               <div class="modal-header">
-                <h1 class="modal-title fs-5" id="modalLabel-${i}">${car.firstName} ${car.lastName} - Details</h1>
+                <h1 class="modal-title fs-5" id="modalLabel-${i}">Car info:</h1>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
               </div>
               <div class="modal-body">
-                ${car.hiddenDetail}
+                ${p.hiddenDetail}
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -54,5 +57,5 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   };
 
-  render(players);
+  render(players); // Use your BMW data array
 });
