@@ -1,47 +1,45 @@
 body {
-    font-family: Arial, sans-serif;
-    background-color: #212529;
-    margin: 0;
-    padding: 20px;
+  font-family: Arial, sans-serif;
+  background-color: #212529;
+  margin: 0;
+  padding: 20px;
 }
 
-
 /*fonts*/
- p {
-    font-family: "gesta", sans-serif;
-font-weight: 400;
-font-style: normal;
- }
+p {
+  font-family: "gesta", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
 
 /*home pg*/
- .hero-video-bg {
-                position: fixed;
-                top: 0;
-                left: 0;
-                width: 100vw;
-                height: 100vh;
-                object-fit: cover;
-                z-index: 0;
-            }
-            .navbar {
-                position: relative;
-                z-index: 2;
-            }
-            .hero-overlay {
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100vw;
-                height: 100vh;
-                z-index: 1;
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-                color: #fff;
-                text-shadow: 0 2px 8px #000;
-                
-            }
+.hero-video-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: 0;
+}
+.navbar {
+  position: relative;
+  z-index: 2;
+}
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  text-shadow: 0 2px 8px #000;
+}
 
 /*about grid text*/
 .grid-container {
@@ -98,15 +96,15 @@ font-style: normal;
   color: #333;
 }
 
-/* Badge for position */
+
 .badge-position {
   background-color: #4d5256;
   color: white;
   font-size: 0.75rem;
+  display: inline-block;
   padding: 4px 8px;
   border-radius: 12px;
   margin-bottom: 5px;
-  display: inline-block;
 }
 
 /* Year text style */
