@@ -57,5 +57,5 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   };
 
-  render(players); // Use your BMW data array
+  render(players); 
 });
